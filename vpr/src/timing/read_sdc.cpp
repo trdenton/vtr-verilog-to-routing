@@ -1141,7 +1141,7 @@ void apply_combinational_default_timing_constraints(const AtomNetlist& netlist,
     std::string clock_name = "virtual_io_clock";
 
     VTR_LOG("Setting default timing constraints:\n");
-    VTR_LOG("   * constrain all primay inputs and primary outputs on a virtual external clock '%s'\n", clock_name.c_str());
+    VTR_LOG("   * constrain all primary inputs and primary outputs on a virtual external clock '%s'\n", clock_name.c_str());
     VTR_LOG("   * optimize virtual clock to run as fast as possible\n");
 
     //Create a virtual clock, with 0 period
@@ -1165,7 +1165,7 @@ void apply_single_clock_default_timing_constraints(const AtomNetlist& netlist,
     std::string clock_name = netlist.net_name(clock_net);
 
     VTR_LOG("Setting default timing constraints:\n");
-    VTR_LOG("   * constrain all primay inputs and primary outputs on netlist clock '%s'\n", clock_name.c_str());
+    VTR_LOG("   * constrain all primary inputs and primary outputs on netlist clock '%s'\n", clock_name.c_str());
     VTR_LOG("   * optimize netlist clock to run as fast as possible\n");
 
     //Create the netlist clock with period 0
@@ -1193,7 +1193,7 @@ void apply_multi_clock_default_timing_constraints(const AtomNetlist& netlist,
                                                   tatum::TimingConstraints& tc) {
     std::string virtual_clock_name = "virtual_io_clock";
     VTR_LOG("Setting default timing constraints:\n");
-    VTR_LOG("   * constrain all primay inputs and primary outputs on a virtual external clock '%s'\n", virtual_clock_name.c_str());
+    VTR_LOG("   * constrain all primary inputs and primary outputs on a virtual external clock '%s'\n", virtual_clock_name.c_str());
     VTR_LOG("   * optimize all netlist and virtual clocks to run as fast as possible\n");
     VTR_LOG("   * ignore cross netlist clock domain timing paths\n");
 
